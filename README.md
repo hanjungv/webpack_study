@@ -9,7 +9,7 @@ react app without create-react-app (webpack tutorial)
 * https://velopert.com/814 를 참조하여 작성하였습니다. 감사합니다.
 
 ## log
-1. 2017.07.29 커밋 : / url : 
+1. 2017.07.29 url : [https://github.com/hanjungv/webpack_study/blob/master/2017.07.29.LOG.md](https://github.com/hanjungv/webpack_study/blob/master/2017.07.29.LOG.md)
 
 #### 일하면서 궁금했던 점
 0. package.json 이란?
