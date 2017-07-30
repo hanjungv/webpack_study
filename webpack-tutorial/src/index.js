@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 import './styles/index.css';
+import TodoListsContainer from './containers/TodoListsContainer';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Provider store={store}>
+    <TodoListsContainer />
+  </Provider>
+, rootElement);
