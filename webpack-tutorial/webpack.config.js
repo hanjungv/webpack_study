@@ -14,7 +14,7 @@ module.exports = {
     plugins: [
     ],
     module: {
-        loaders: [
+        rules: [
             {
                 test: [
                     /\.js$/,
@@ -29,7 +29,32 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader',
+                use: [
+                    "style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                        modules: true,
+                        sourceMap: true,
+                        importLoaders: 1,
+                        localIdentName: "[name]--[local]--[hash:base64:8]"
+                        }
+                    },
+                    "postcss-loader" // has separate config, see postcss.config.js nearby
+                ],
+            },
+            {
+                test: [
+                    /\.scss$/,
+                    /\.sass$/,
+                ],
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             }
         ]
     }
